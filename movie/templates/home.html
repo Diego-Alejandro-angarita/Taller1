@@ -4,7 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver peliculas</title>
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        img {
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+            min-width: 500px;
+        }
+        .movies-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -25,14 +71,17 @@
                 </button>
             </form>
             <p>Searching for {{searchMovie}}</p>
-                {% for movie in movies %}
-                    <h2>{{movie.title}}</h2>
-                    <h3>{{movie.description}}</h3>
-                    <img src="{{movie.image.url}}" alt="{{movie.title}}">
-                    {% if movie.url %}
-                        <a href="{{movie.url}}">More info</a>
-                    {% endif %}
-                {% endfor %}
+                <div class="movies-list">
+                    {% for movie in movies %}
+                        <h2>{{movie.title}}</h2>
+                        <h3>{{movie.description}}</h3>
+                        <img src="{{movie.image.url}}" alt="{{movie.title}}">
+                        {% if movie.url %}
+                            <a href="{{movie.url}}">More info</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
             <br>
         </div>
     </main>
