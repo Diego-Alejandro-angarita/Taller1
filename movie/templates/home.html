@@ -19,30 +19,43 @@
             padding: 10px 0;
             text-align: center;
         }
+
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
-            background: #fff;
+            background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1, h2, h3 {
-            color: #333;
-        }
-        img {
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin-bottom: 10px;
-            min-width: 500px;
-        }
+
         .movies-list {
             display: flex;
             flex-direction: column;
+            gap: 25px;
             align-items: center;
-            align-content: center;
+            justify-content: center;
         }
+
+        .movies-list img {
+            height: auto;
+            width: 80%;
+            background-color: rgb(150, 141, 141);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .movies-list img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         a {
             color: #0066cc;
             text-decoration: none;
